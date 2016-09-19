@@ -14,7 +14,7 @@ defmodule Plugapp.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :ecto, :cowboy, :plug, :postgrex]]
   end
 
   # Dependencies can be Hex packages:
@@ -27,6 +27,10 @@ defmodule Plugapp.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ecto, "~> 2.1.0-rc.0"},
+     {:plug, "~> 1.2.0"},
+     {:cowboy, "~> 1.0.4"},
+     {:postgrex, "~> 0.12.0"}
+    ]
   end
 end
